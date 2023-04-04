@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023">
+
+            <ImageView
+                android:id="@+id/imgAvata"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_avatar" />
+
+            <ImageView
+                android:id="@+id/imgexit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_marginLeft="210dp"
+                android:layout_toRightOf="@id/tvXinChao"
+                android:paddingBottom="5dp"
+                android:src="@drawable/icon_log_out" />
+
+            <TextView
+                android:id="@+id/tvXinChao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/imgAvata"
+                android:text="Xin chào,"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/username_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvXinChao"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/imgAvata"
+                android:paddingTop="1dp"
+                android:text="Nguyen Van A"
+                android:textSize="22dp" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/gradient_background"
+            android:backgroundTint="@color/green">
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="180dp"
+                android:layout_marginBottom="380dp"
+                android:background="@drawable/background_data"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_DoAmKK"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/air_huni" />
+
+                <TextView
+                    android:id="@+id/textDAKK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_DoAmKK"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="53dp"
+                    android:text="Độ ẩm KK"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_DoAmKK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_DoAmKK"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="180dp"
+                android:layout_marginBottom="176dp"
+                android:background="@drawable/background_data"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_DoAmDat"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/land_huni" />
+
+                <TextView
+                    android:id="@+id/textDAD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_DoAmDat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="52dp"
+                    android:text="Ánh sáng"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_DoAmDat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_DoAmDat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="180dp"
+                android:layout_marginBottom="380dp"
+                android:background="@drawable/background_data"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_AnhSang"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/sunsight" />
+
+                <TextView
+                    android:id="@+id/textAS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_AnhSang"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="52dp"
+                    android:text="Ánh sáng"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_AnhSang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_AnhSang"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="180dp"
+                android:layout_marginBottom="176dp"
+                android:background="@drawable/background_data"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_NhietDo1"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/temp" />
+
+                <TextView
+                    android:id="@+id/textND"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_NhietDo1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="52dp"
+                    android:text="Ánh sáng"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_NhietDo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_NhietDo1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="47dp"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="123"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
