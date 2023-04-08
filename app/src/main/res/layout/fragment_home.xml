@@ -45,10 +45,10 @@
                 android:id="@+id/tvXinChao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_toRightOf="@id/imgAvata"
+                android:layout_marginStart="14dp"
+                android:layout_toEndOf="@id/imgAvata"
                 android:text="Xin chào,"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/username_home"
@@ -89,6 +89,7 @@
                     android:layout_height="95dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="14dp"
                     android:src="@drawable/air_huni" />
 
                 <TextView
@@ -98,15 +99,9 @@
                     android:layout_below="@id/img_DoAmKK"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="25dp"
-<<<<<<< Updated upstream
-                    android:layout_marginTop="53dp"
-                    android:text="Độ ẩm KK"
-                    android:textSize="18dp" />
-=======
                     android:layout_marginTop="42dp"
                     android:text="Độ ẩm không khí"
                     android:textSize="17dp" />
->>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_DoAmKK"
@@ -115,11 +110,7 @@
                     android:layout_below="@id/img_DoAmKK"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="47dp"
-<<<<<<< Updated upstream
-                    android:layout_marginTop="12dp"
-=======
                     android:layout_marginTop="8dp"
->>>>>>> Stashed changes
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
@@ -146,12 +137,8 @@
                     android:layout_width="95dp"
                     android:layout_height="95dp"
                     android:layout_centerHorizontal="true"
-<<<<<<< Updated upstream
-                    android:layout_marginLeft="5dp"
-=======
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="14dp"
->>>>>>> Stashed changes
                     android:src="@drawable/land_huni" />
 
                 <TextView
@@ -161,15 +148,9 @@
                     android:layout_below="@id/img_DoAmDat"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="28dp"
-<<<<<<< Updated upstream
-                    android:layout_marginTop="52dp"
-                    android:text="Ánh sáng"
-                    android:textSize="18dp" />
-=======
                     android:layout_marginTop="42dp"
                     android:text="Độ ẩm thực tế"
                     android:textSize="17dp" />
->>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_DoAmDat"
@@ -178,7 +159,7 @@
                     android:layout_below="@id/img_DoAmDat"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
@@ -204,8 +185,10 @@
                     android:id="@+id/img_AnhSang"
                     android:layout_width="95dp"
                     android:layout_height="95dp"
+                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="14dp"
                     android:src="@drawable/sunsight" />
 
                 <TextView
@@ -214,13 +197,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/img_AnhSang"
                     android:layout_centerHorizontal="true"
-<<<<<<< Updated upstream
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginTop="52dp"
-=======
                     android:layout_marginStart="28dp"
                     android:layout_marginTop="42dp"
->>>>>>> Stashed changes
                     android:text="Ánh sáng"
                     android:textSize="17sp" />
 
@@ -231,7 +209,7 @@
                     android:layout_below="@id/img_AnhSang"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
@@ -259,6 +237,7 @@
                     android:layout_height="95dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="14dp"
                     android:src="@drawable/temp" />
 
                 <TextView
@@ -268,15 +247,9 @@
                     android:layout_below="@id/img_NhietDo1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="28dp"
-<<<<<<< Updated upstream
-                    android:layout_marginTop="52dp"
-                    android:text="Ánh sáng"
-                    android:textSize="18dp" />
-=======
                     android:layout_marginTop="42dp"
                     android:text="Nhiệt độ"
                     android:textSize="17dp" />
->>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_NhietDo"
@@ -285,7 +258,7 @@
                     android:layout_below="@id/img_NhietDo1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="47dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
