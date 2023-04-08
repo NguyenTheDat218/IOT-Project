@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Myeditext">
+
+        <item name="colorControlNormal">#808080</item>
+        <!--        Màu ở trạng thái khi bấm vào-->
+        <item name="colorControlActivated">#03CEE8</item>
+        <!--        Màu khi copy-->
+        <item name="colorControlHighlight">#03D3ED</item>
+    </style>
+    <style name="styleCicleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

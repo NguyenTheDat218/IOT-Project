@@ -69,12 +69,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/gradient_background"
-            android:backgroundTint="@color/green">
+            android:background="@drawable/plant_background"
+            >
 
             <RelativeLayout
-                android:layout_width="160dp"
-                android:layout_height="180dp"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
                 android:layout_marginBottom="380dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
@@ -98,9 +98,15 @@
                     android:layout_below="@id/img_DoAmKK"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="25dp"
+<<<<<<< Updated upstream
                     android:layout_marginTop="53dp"
                     android:text="Độ ẩm KK"
                     android:textSize="18dp" />
+=======
+                    android:layout_marginTop="42dp"
+                    android:text="Độ ẩm không khí"
+                    android:textSize="17dp" />
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_DoAmKK"
@@ -109,7 +115,11 @@
                     android:layout_below="@id/img_DoAmKK"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="47dp"
+<<<<<<< Updated upstream
                     android:layout_marginTop="12dp"
+=======
+                    android:layout_marginTop="8dp"
+>>>>>>> Stashed changes
                     android:ellipsize="marquee"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
@@ -121,9 +131,9 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="160dp"
-                android:layout_height="180dp"
-                android:layout_marginBottom="176dp"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="150dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -136,7 +146,12 @@
                     android:layout_width="95dp"
                     android:layout_height="95dp"
                     android:layout_centerHorizontal="true"
+<<<<<<< Updated upstream
                     android:layout_marginLeft="5dp"
+=======
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="14dp"
+>>>>>>> Stashed changes
                     android:src="@drawable/land_huni" />
 
                 <TextView
@@ -146,9 +161,15 @@
                     android:layout_below="@id/img_DoAmDat"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="28dp"
+<<<<<<< Updated upstream
                     android:layout_marginTop="52dp"
                     android:text="Ánh sáng"
                     android:textSize="18dp" />
+=======
+                    android:layout_marginTop="42dp"
+                    android:text="Độ ẩm thực tế"
+                    android:textSize="17dp" />
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_DoAmDat"
@@ -169,8 +190,8 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="160dp"
-                android:layout_height="180dp"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
                 android:layout_marginBottom="380dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
@@ -193,10 +214,15 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/img_AnhSang"
                     android:layout_centerHorizontal="true"
+<<<<<<< Updated upstream
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="52dp"
+=======
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="42dp"
+>>>>>>> Stashed changes
                     android:text="Ánh sáng"
-                    android:textSize="18dp" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/tv_AnhSang"
@@ -217,9 +243,9 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="160dp"
-                android:layout_height="180dp"
-                android:layout_marginBottom="176dp"
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="150dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -242,9 +268,15 @@
                     android:layout_below="@id/img_NhietDo1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="28dp"
+<<<<<<< Updated upstream
                     android:layout_marginTop="52dp"
                     android:text="Ánh sáng"
                     android:textSize="18dp" />
+=======
+                    android:layout_marginTop="42dp"
+                    android:text="Nhiệt độ"
+                    android:textSize="17dp" />
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/tv_NhietDo"

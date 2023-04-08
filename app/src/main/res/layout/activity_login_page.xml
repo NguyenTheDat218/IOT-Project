@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:background="@drawable/plant_background3"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -31,7 +31,7 @@
                 android:hint="Email"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:textSize="15dp"></com.google.android.material.textfield.TextInputEditText>
+                android:textSize="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -52,7 +52,7 @@
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:textSize="15dp"></com.google.android.material.textfield.TextInputEditText>
+                android:textSize="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -71,7 +71,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                app:backgroundTint="#11998e"></Button>
+                app:backgroundTint="#11998e" />
 
             <Button
                 android:id="@+id/btn_to_register"
@@ -85,7 +85,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                app:backgroundTint="#11998e"></Button>
+                app:backgroundTint="#11998e" />
         </LinearLayout>
 
     </LinearLayout>
