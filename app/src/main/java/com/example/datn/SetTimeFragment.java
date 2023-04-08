@@ -87,12 +87,12 @@ public class SetTimeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_set_time, container, false);
-        realtime_temp = view.findViewById(R.id.text_real_temp);
-        realtime_humi = view.findViewById(R.id.text_real_humi);
+        //realtime_temp = view.findViewById(R.id.text_real_temp);
+        //realtime_humi = view.findViewById(R.id.text_real_humi);
         settime1 = view.findViewById(R.id.edit_time1);
         settime2 =view.findViewById(R.id.edit_time2);
         settime3=view.findViewById(R.id.edit_time3);
-        status_Weather = view.findViewById(R.id.img_change_weather);
+        //status_Weather = view.findViewById(R.id.img_change_weather);
         Switch_settime1 = view.findViewById(R.id.check_time1);
         Switch_settime2 = view.findViewById(R.id.check_time2);
         Switch_settime1.setChecked(true);
@@ -202,7 +202,7 @@ public class SetTimeFragment extends Fragment {
                 }
             }
         });
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        /*databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 realtime_humi.setText(snapshot.child("DoAm").getValue().toString() + "%");
@@ -212,7 +212,7 @@ public class SetTimeFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
         return view;
     }
 }

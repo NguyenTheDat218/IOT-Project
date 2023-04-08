@@ -72,15 +72,61 @@
             android:background="@drawable/plant_background"
             >
 
+
+            <RelativeLayout
+                android:layout_width="396dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/background_data"
+
+                android:backgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_Date"
+                    android:layout_width="170dp"
+                    android:layout_height="40dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="200dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Date"
+                    android:textSize="21dp" />
+
+                <TextView
+                    android:id="@+id/tv_Time"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:text="Time"
+                    android:textSize="21dp" />
+
+
+            </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
-                android:layout_marginBottom="380dp"
+                android:layout_marginBottom="324dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintHorizontal_bias="0.937"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
@@ -124,12 +170,12 @@
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="96dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.063"
+                app:layout_constraintHorizontal_bias="0.066"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
@@ -173,12 +219,12 @@
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
-                android:layout_marginBottom="380dp"
+                android:layout_marginBottom="324dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintHorizontal_bias="0.066"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
@@ -223,12 +269,12 @@
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="96dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintHorizontal_bias="0.933"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
