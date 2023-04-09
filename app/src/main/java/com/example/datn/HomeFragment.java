@@ -1,5 +1,8 @@
 package com.example.datn;
 
+import static java.lang.String.format;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -24,8 +27,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +49,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView temp,huniland,huniair,light;
+    private TextView temp,huniland,huniair,light,tvDay,tvTime;
     private Object AnhSang, DoAmKK, DoAmDat,NhietDo;
     TextView username;
     ImageView exit, avatar;
@@ -78,6 +85,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,6 +93,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         temp = view.findViewById(R.id.tv_NhietDo);
         avatar = view.findViewById(R.id.imgAvata);
+        tvTime = view.findViewById(R.id.tv_Time);
+        tvDay = view.findViewById(R.id.tv_Date);
         huniair = view.findViewById(R.id.tv_DoAmKK);
         huniland = view.findViewById(R.id.tv_DoAmDat);
         light = view.findViewById(R.id.tv_AnhSang);
@@ -95,6 +105,7 @@ public class HomeFragment extends Fragment {
             String name = bundle.getString("name");
             username.setText(name);
         }
+        loadDateTime();
 
         temp.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         temp.setSelected(true);
@@ -146,4 +157,12 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
-}}
+}
+
+    private void loadDateTime() {
+        String day = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String time = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
+        tvDay.setText("Ngày : " + day);
+        tvTime.setText("Giờ : " + time);
+    }
+}

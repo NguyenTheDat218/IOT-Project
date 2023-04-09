@@ -10,185 +10,210 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/green">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.009">
-
-            <ImageView
-                android:id="@+id/img_real_humi"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/air_huni" />
-
-            <TextView
-                android:id="@+id/text_real_humi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/img_real_humi"
-                android:layout_marginLeft="50dp"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/text_real_humi_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text_real_humi"
-                android:layout_marginLeft="18dp"
-                android:text="Độ ẩm thực tế"
-                android:textSize="17dp" />
-
-            <ImageView
-                android:id="@+id/img_real_temp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/text_real_humi_1"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/temp" />
-
-            <TextView
-                android:id="@+id/text_real_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/img_real_temp"
-                android:layout_marginLeft="50dp"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/text_real_temp_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text_real_temp"
-                android:layout_marginLeft="18dp"
-                android:text="Nhiệt độ thực tế"
-                android:textSize="17dp" />
-
-            <ImageView
-                android:id="@+id/img_change_weather"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="45dp"
-                android:layout_toRightOf="@id/img_real_temp"
-                android:src="@drawable/sunsight1_png" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/img_change_weather"
-                android:layout_marginLeft="90dp"
-                android:layout_toRightOf="@id/img_real_temp"
-                android:text="Tình trạng thời tiết"
-                android:textSize="20dp" />
-
-
-        </RelativeLayout>
+        android:background="@drawable/plant_background2">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="390dp"
+            android:layout_width="413dp"
+            android:layout_height="591dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.956">
+            app:layout_constraintVertical_bias="0.335">
 
-            <ImageView
-                android:id="@+id/img_icon_clock"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_marginLeft="75dp"
-                android:layout_marginTop="33dp"
-                android:layout_toRightOf="@id/tv_settime1"
-                android:src="@drawable/icon_clock"
-                />
-            <TextView
-                android:id="@+id/tv_settime1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="60dp"
-                android:text="Thời gian: "
-                android:textSize="20dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/setting"
+                android:layout_width="194dp"
+                android:layout_height="76dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="107dp"
+                android:background="@drawable/background_data"
 
-            <EditText
-                android:id="@+id/edit_time1"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_settime1"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="4dp"
-                />
+                android:backgroundTint="@color/dark_back1">
 
-            <Switch
-                android:id="@+id/check_time1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_settime2"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="6dp"
-                android:layout_toRightOf="@id/edit_time1"
-                android:clickable="true" />
+                <TextView
 
-            <TextView
-                android:id="@+id/tv_settime2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/edit_time1"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="5dp"
-                android:text="Khoảng thời gian: "
-                android:textSize="20dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Tuỳ chỉnh"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.507"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-            <EditText
-                android:id="@+id/edit_time2"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_settime2"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="5dp" />
 
-            <TextView
-                android:id="@+id/tv_settime3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/edit_time2"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="25dp"
-                android:layout_toRightOf="@id/tv_settime2"
-                android:text="Thời gian lặp lại:"
-                android:textSize="20dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <EditText
-                android:id="@+id/edit_time3"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_settime3"
-                android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@id/tv_settime2"
-                android:layout_marginTop="5dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-            <Switch
-                android:id="@+id/check_time2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_settime3"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="6dp"
-                android:layout_toRightOf="@id/edit_time3" />
+                android:id="@+id/tv_setting1"
+                android:layout_width="413dp"
+                android:layout_height="481dp"
+                android:layout_below="@+id/setting"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="1dp"
+                android:background="@drawable/background_data"
+                android:backgroundTint="@color/white">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tv_setting2"
+                    android:layout_width="364dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/background_data1"
+                    android:backgroundTint="@color/dark_back"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.489"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_settime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="20dp"
+                        android:text="Thời gian: "
+                        android:textSize="25sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.064"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <EditText
+                        android:id="@+id/edit_time1"
+                        android:layout_width="127dp"
+                        android:layout_height="46dp"
+                        android:layout_below="@id/tv_settime1"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/tv_settime1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tv_setting3"
+
+                    android:layout_width="364dp"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/background_data1"
+                    android:backgroundTint="@color/dark_back"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_setting2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_setting2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_setting2">
+
+                    <Switch
+                        android:id="@+id/check_time1"
+                        android:layout_width="64dp"
+                        android:layout_height="41dp"
+                        android:layout_below="@id/tv_settime2"
+
+                        android:layout_marginTop="12dp"
+                        android:clickable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.506"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_settime2"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <TextView
+                        android:id="@+id/tv_settime2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="36dp"
+                        android:text="Khoảng thời gian: "
+                        android:textSize="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.097"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edit_time2"
+                        android:layout_width="112dp"
+                        android:layout_height="44dp"
+
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="28dp"
+                        app:layout_constraintStart_toEndOf="@+id/tv_settime2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tv_setting4"
+                    android:layout_width="364dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/background_data1"
+                    android:backgroundTint="@color/dark_back"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_setting2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_setting2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_setting3">
+
+                    <TextView
+                        android:id="@+id/tv_settime3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="36dp"
+                        android:text="Thời gian lặp lại:"
+                        android:textSize="25dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.087"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edit_time3"
+                        android:layout_width="142dp"
+                        android:layout_height="46dp"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintStart_toEndOf="@+id/tv_settime3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/check_time2"
+                        android:layout_width="73dp"
+                        android:layout_height="39dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/edit_time3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_settime3"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
 
 </FrameLayout>
