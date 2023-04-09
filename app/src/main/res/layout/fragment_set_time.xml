@@ -24,27 +24,44 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/setting"
-                android:layout_width="194dp"
-                android:layout_height="76dp"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="107dp"
-                android:background="@drawable/background_data"
+                android:layout_marginStart="53dp"
 
+                android:layout_marginEnd="61dp"
+                android:background="@drawable/background_data"
                 android:backgroundTint="@color/dark_back1">
 
                 <TextView
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Tuỳ chỉnh"
+                    android:id="@+id/textView2"
+                    android:layout_width="169dp"
+                    android:layout_height="83dp"
+                    android:text="Tình trạng thời tiết"
+                    android:textColor="#508833"
+                    android:textAlignment="center"
                     android:textSize="30dp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.507"
+                    app:layout_constraintHorizontal_bias="0.123"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/img_change_weather"
+                    android:layout_width="90dp"
+                    android:layout_height="93dp"
+
+                    android:src="@drawable/sunsight1_png"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -52,8 +69,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
 
                 android:id="@+id/tv_setting1"
-                android:layout_width="413dp"
-                android:layout_height="481dp"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
                 android:layout_below="@+id/setting"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
@@ -68,12 +85,12 @@
                     android:id="@+id/tv_setting2"
                     android:layout_width="364dp"
                     android:layout_height="80dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="28dp"
                     android:background="@drawable/background_data1"
                     android:backgroundTint="@color/dark_back"
 
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.489"
+                    app:layout_constraintHorizontal_bias="0.469"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -109,11 +126,11 @@
 
                     android:layout_width="364dp"
                     android:layout_height="126dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="25dp"
                     android:background="@drawable/background_data1"
                     android:backgroundTint="@color/dark_back"
                     app:layout_constraintEnd_toEndOf="@+id/tv_setting2"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_setting2"
                     app:layout_constraintTop_toBottomOf="@+id/tv_setting2">
 
@@ -160,11 +177,11 @@
                     android:id="@+id/tv_setting4"
                     android:layout_width="364dp"
                     android:layout_height="130dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="25dp"
                     android:background="@drawable/background_data1"
                     android:backgroundTint="@color/dark_back"
                     app:layout_constraintEnd_toEndOf="@+id/tv_setting2"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/tv_setting2"
                     app:layout_constraintTop_toBottomOf="@+id/tv_setting3">
 
