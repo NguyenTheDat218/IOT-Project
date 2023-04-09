@@ -50,13 +50,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+
                 android:id="@+id/tv_setting1"
                 android:layout_width="413dp"
-                android:layout_height="480dp"
+                android:layout_height="481dp"
                 android:layout_below="@+id/setting"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="-1dp"
                 android:layout_marginTop="28dp"
+                android:layout_marginEnd="1dp"
                 android:background="@drawable/background_data"
                 android:backgroundTint="@color/white">
 
