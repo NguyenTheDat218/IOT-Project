@@ -8,67 +8,69 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/plant_background2">
 
         <TextView
             android:id="@+id/tv_setNguongCamBien2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="64dp"
-            android:text="Set ngưỡng nhiệt độ: "
+            android:layout_marginTop="384dp"
 
+            android:text="Set ngưỡng nhiệt độ: "
             android:textSize="25dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tb4" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_setNguongCamBien3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="44dp"
+            android:layout_marginStart="36dp"
+
+            android:layout_marginTop="464dp"
             android:text="Set ngưỡng độ ẩm: "
             android:textSize="25dp"
-
-            app:layout_constraintStart_toStartOf="@+id/tv_setNguongCamBien2"
-            app:layout_constraintTop_toBottomOf="@+id/tv_setNguongCamBien2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_NguongCamBien2"
             android:layout_width="63dp"
             android:layout_height="58dp"
-            android:layout_marginStart="32dp"
 
-            android:layout_marginTop="60dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginTop="376dp"
             android:enabled="false"
-            app:layout_constraintStart_toEndOf="@+id/tv_setNguongCamBien2"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tb4_status4" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_NguongCamBien3"
             android:layout_width="60dp"
             android:layout_height="56dp"
-            android:layout_marginStart="52dp"
 
 
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="452dp"
             android:enabled="false"
-            app:layout_constraintStart_toEndOf="@+id/tv_setNguongCamBien3"
-            app:layout_constraintTop_toBottomOf="@+id/edit_NguongCamBien2" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_set_sensor_threshold2"
             android:layout_width="365dp"
             android:layout_height="53dp"
-            android:layout_marginTop="52dp"
 
+            android:layout_marginTop="572dp"
             android:background="@drawable/roundedbutton"
             android:text="SET"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_setNguongCamBien3" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_tb1_status"
@@ -82,17 +84,6 @@
             app:layout_constraintTop_toTopOf="@+id/tv_tb5" />
 
         <TextView
-            android:id="@+id/tv_tb2_status2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-
-            android:text="ON"
-            android:textSize="25dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_tb2"
-            app:layout_constraintTop_toTopOf="@+id/tv_tb2" />
-
-        <TextView
             android:id="@+id/tv_tb3_status3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,27 +95,16 @@
             app:layout_constraintTop_toTopOf="@+id/tv_tb3" />
 
         <TextView
-            android:id="@+id/tv_tb4_status4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-
-            android:text="ON"
-            android:textSize="25dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_tb4"
-            app:layout_constraintTop_toTopOf="@+id/tv_tb4" />
-
-        <TextView
             android:id="@+id/tv_tb5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginStart="36dp"
 
+            android:layout_marginTop="264dp"
             android:text="Thiết bị 1    ------->"
             android:textSize="30dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
@@ -138,39 +118,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_tb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="28dp"
-
-            android:text="Thiết bị 2    ------->"
-            android:textSize="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tb5" />
-
-        <TextView
             android:id="@+id/tv_tb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="36dp"
 
+            android:layout_marginTop="316dp"
             android:text="Thiết bị 3    ------->"
             android:textSize="30dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tb2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_tb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="24dp"
-
-            android:text="Thiết bị 4    ------->"
-            android:textSize="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_tb3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

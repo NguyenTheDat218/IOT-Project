@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -160,9 +161,11 @@ public class HomeFragment extends Fragment {
 }
 
     private void loadDateTime() {
-        String day = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         String time = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
-        tvDay.setText("Ngày : " + day);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String currentDate = dateFormat.format(calendar.getTime());
+        tvDay.setText("Ngày : " + currentDate);
         tvTime.setText("Giờ : " + time);
     }
 }

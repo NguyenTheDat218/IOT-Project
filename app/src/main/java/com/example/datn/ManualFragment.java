@@ -34,7 +34,7 @@ public class ManualFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView tb1,tb2,tb3;
+    TextView tb1,tb3;
     EditText nhietdo,doam;
     Button set;
     int key=1;
@@ -75,7 +75,6 @@ public class ManualFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_manual, container, false);
 
         tb1 = view.findViewById(R.id.tv_tb1_status);
-        tb2 = view.findViewById(R.id.tv_tb2_status2);
         tb3 = view.findViewById(R.id.tv_tb3_status3);
         nhietdo = view.findViewById(R.id.edit_NguongCamBien2);
         doam = view.findViewById(R.id.edit_NguongCamBien3);
@@ -132,6 +131,7 @@ public class ManualFragment extends Fragment {
                     databaseReference.child("SetDoAmDat").setValue(Integer.parseInt(doam.getText().toString()));
                     databaseReference.child("SetNhietDo").setValue(Integer.parseInt(nhietdo.getText().toString()));
                     databaseReference.child("XacNhanNguongCamBien").setValue(2);
+                    set.setText("SET");
                     key=key-1;
                 }
             }
