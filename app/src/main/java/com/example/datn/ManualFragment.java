@@ -89,8 +89,8 @@ public class ManualFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String a = snapshot.child("SetDoAmDat").getValue().toString();
-                String b = snapshot.child("SetNhietDo").getValue().toString();
-                nhietdo.setText(b);
+                //String b = snapshot.child("SetNhietDo").getValue().toString();
+                //nhietdo.setText(b);
                 doam.setText(a);
             }
 

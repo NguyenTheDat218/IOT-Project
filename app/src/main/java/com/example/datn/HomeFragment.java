@@ -127,9 +127,9 @@ public class HomeFragment extends Fragment {
                 DoAmDat = snapshot.child("DoAmDat").getValue();
                 DoAmKK = snapshot.child("DoAm").getValue();
                 NhietDo = snapshot.child("NhietDo").getValue();
-                light.setText(AnhSang.toString() + "");
+                /*light.setText(AnhSang.toString() + "");
                 temp.setText(NhietDo.toString() + "°C");
-                huniair.setText(DoAmKK.toString() + "%");
+                huniair.setText(DoAmKK.toString() + "%");*/
                 huniland.setText(DoAmDat.toString() + "%");
             }
 
