@@ -2,6 +2,8 @@ package com.example.datn;
 
 import static java.lang.Float.parseFloat;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 
@@ -15,10 +17,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.ViewSwitcher;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -45,13 +49,12 @@ public class SetTimeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView realtime_temp,realtime_humi;
-    private EditText settime1,settime2,settime3;
-    private ImageView status_Weather;
+    private EditText settime1,settime2,settime3,settime4;
     private boolean isChecked = false;
     Switch Switch_settime1, Switch_settime2;
     private int key_xac_nhan;
     private boolean key_xac_nhan_lap_lai;
+    private NumberPicker numberPicker ;
     public SetTimeFragment() {
         // Required empty public constructor
     }
@@ -92,6 +95,11 @@ public class SetTimeFragment extends Fragment {
         settime1 = view.findViewById(R.id.edit_time1);
         settime2 =view.findViewById(R.id.edit_time2);
         settime3=view.findViewById(R.id.edit_time3);
+        settime4=view.findViewById(R.id.edit_timerepeat);
+        numberPicker = view.findViewById(R.id.numberPicker);
+        AlertDialog.Builder builder;
+        AlertDialog dialog;
+        numberPicker.setWrapSelectorWheel(false);
         //status_Weather = view.findViewById(R.id.img_change_weather);
         Switch_settime1 = view.findViewById(R.id.check_time1);
         Switch_settime2 = view.findViewById(R.id.check_time2);
@@ -100,6 +108,7 @@ public class SetTimeFragment extends Fragment {
         settime1.setEnabled(false);
         settime2.setEnabled(false);
         settime3.setEnabled(false);
+        settime4.setEnabled(false);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("CamBien");
         DatabaseReference databaseReference2 = firebaseDatabase.getReference("HenGio");
@@ -110,10 +119,11 @@ public class SetTimeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String a = snapshot.child("KhoangTG").child("KhoangTG_Phut").getValue().toString();
-                String b = snapshot.child("KhoangTG").child("KhoangTG_Giay").getValue().toString();
+                String c = snapshot.child("KhoangTG_LapLai").getValue().toString();
                 settime1.setText(snapshot.child("Gio").getValue().toString() + ":" + snapshot.child("Phut").getValue().toString());
-                settime2.setText( a+":"+ b);
+                settime2.setText( a+"phút");
                 settime3.setText(snapshot.child("LapLai").getValue().toString());
+                settime4.setText(c);
             }
 
             @Override
@@ -139,6 +149,30 @@ public class SetTimeFragment extends Fragment {
                 timePickerDialog.show();
             }
         });
+        settime2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.number_picker_dialog);
+                final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker);
+                numberPicker.setMinValue(1);
+                numberPicker.setMaxValue(60);
+
+                Button okButton = dialog.findViewById(R.id.okButton);
+                okButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int selectedValue = numberPicker.getValue();
+                        settime2.setText(String.valueOf(selectedValue));
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
+
+
 
         settime1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -167,20 +201,30 @@ public class SetTimeFragment extends Fragment {
                 if(Switch_settime1.isChecked()==true){
                     settime1.setEnabled(false);
                     settime2.setEnabled(false);
+                    settime1.setTextColor(getResources().getColor(R.color.text_lock));
+                    settime2.setTextColor(getResources().getColor(R.color.text_lock));
+                    settime4.setTextColor(getResources().getColor(R.color.text_lock));
+                    settime4.setEnabled(false);
                     String[] parts = settime1.getText().toString().split(":");
                     String hour = parts[0];
                     String minute = parts[1];
                     String[] parts1 = settime2.getText().toString().split(":");
                     String minutes = parts1[0];
                     String seconds = parts1[1];
+                    String parts2 = settime4.getText().toString();
                     child.child("Gio").setValue(Float.parseFloat(hour));
                     child.child("Phut").setValue(Float.parseFloat(minute));
                     child.child("KhoangTG").child("KhoangTG_Phut").setValue(Float.parseFloat(minutes));
                     child.child("KhoangTG").child("KhoangTG_Giay").setValue(Float.parseFloat(seconds));
+                    child.child("KhoangTG_LapLai").setValue(Float.parseFloat(parts2));
                     child.child("XacNhan").setValue(3);
                 }else if(Switch_settime1.isChecked()==false){
                     settime1.setEnabled(true);
+                    settime1.setTextColor(getResources().getColor(R.color.black));
+                    settime2.setTextColor(getResources().getColor(R.color.black));
+                    settime4.setTextColor(getResources().getColor(R.color.black));
                     settime2.setEnabled(true);
+                    settime4.setEnabled(true);
                     child.child("XacNhan").setValue(2);
                 }
             }
@@ -191,12 +235,14 @@ public class SetTimeFragment extends Fragment {
             public void onClick(View v) {
                 if(Switch_settime2.isChecked()==true){
                     settime3.setEnabled(false);
+                    settime3.setTextColor(getResources().getColor(R.color.text_lock));
                     String LapLai = settime3.getText().toString();
                     child.child("LapLai").setValue(LapLai);
                     key_xac_nhan_lap_lai = true;
                     child.child("XacNhanLapLai").setValue(key_xac_nhan_lap_lai);
                 }else if(Switch_settime2.isChecked()==false){
                     settime3.setEnabled(true);
+                    settime3.setTextColor(getResources().getColor(R.color.black));
                     key_xac_nhan_lap_lai = false;
                     child.child("XacNhanLapLai").setValue(key_xac_nhan_lap_lai);
                 }
@@ -215,4 +261,20 @@ public class SetTimeFragment extends Fragment {
         });*/
         return view;
     }
+    public void showNumberPicker(View view) {
+        ViewSwitcher switcher = view.findViewById(R.id.switcher);
+        switcher.showNext();
+        EditText settime2 = view.findViewById(R.id.edit_time2);
+        NumberPicker numberPicker = view.findViewById(R.id.number_picker);
+        numberPicker.setValue(Integer.parseInt(settime2.getText().toString()));
+    }
+    public void updateEditText(View view) {
+        ViewSwitcher switcher = view.findViewById(R.id.switcher);
+        switcher.showPrevious();
+
+        EditText settime2 = view.findViewById(R.id.edit_time2);
+        NumberPicker numberPicker = view.findViewById(R.id.number_picker);
+        settime2.setText(String.valueOf(numberPicker.getValue()));
+    }
+
 }

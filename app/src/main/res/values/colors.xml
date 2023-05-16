@@ -13,6 +13,7 @@
     <color name="MainScrean">#8876C673</color>
     <color name="tv_logo">#559D86</color>
     <color name="dark_back">#DBD6D6</color>
+    <color name="text_lock">#7C7C7C</color>
     <color name="dark_back1">#BAC790</color>
 
 </resources>

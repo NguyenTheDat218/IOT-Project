@@ -7,50 +7,47 @@
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
+
         <RelativeLayout
             android:id="@+id/rl_layout_1"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023">
+            android:layout_height="70dp"
+            >
 
             <ImageView
                 android:id="@+id/imgAvata"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/icon_avatar" />
 
             <ImageView
                 android:id="@+id/imgexit"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentRight="false"
-                android:layout_marginLeft="210dp"
-                android:layout_toRightOf="@id/tvXinChao"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:paddingBottom="5dp"
                 android:src="@drawable/icon_log_out" />
 
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/tvXinChao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/imgAvata"
                 android:text="Xin chào,"
                 android:textSize="15sp" />
 
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/username_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,15 +58,11 @@
                 android:textSize="22dp" />
         </RelativeLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="90dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/plant_background"
-            >
+            android:layout_marginTop="70dp"
+            android:background="@drawable/plant_background">
 
 
             <RelativeLayout
@@ -77,18 +70,12 @@
                 android:layout_height="49dp"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/background_data"
-
-                android:backgroundTint="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.466"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:backgroundTint="@color/white">
 
                 <TextView
                     android:id="@+id/tv_Date"
                     android:layout_width="190dp"
                     android:layout_height="40dp"
-
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
@@ -96,13 +83,14 @@
                     android:layout_marginEnd="180dp"
                     android:layout_marginBottom="10dp"
                     android:text="Date"
-                    android:textSize="21dp" />
+                    android:textSize="21dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tv_Time"
                     android:layout_width="140dp"
                     android:layout_height="40dp"
-
+                    android:textColor="@color/black"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
@@ -120,13 +108,11 @@
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
-                android:layout_marginBottom="324dp"
-                android:background="@drawable/background_data"
-                android:backgroundTint="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.937"
-                app:layout_constraintStart_toStartOf="parent">
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginBottom="96dp"
+                android:background="@drawable/show_data_at_home">
 
                 <ImageView
                     android:id="@+id/img_DoAmKK"
@@ -135,7 +121,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="14dp"
-                    android:src="@drawable/air_huni" />
+                    android:src="@drawable/land_huni" />
 
                 <TextView
                     android:id="@+id/textDAKK"
@@ -145,11 +131,12 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="42dp"
-                    android:text="Độ ẩm không khí"
-                    android:textSize="17dp" />
+                    android:text="Độ ẩm đất cây 1"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
-                    android:id="@+id/tv_DoAmKK"
+                    android:id="@+id/tv_DoAmDat1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/img_DoAmKK"
@@ -163,19 +150,19 @@
                     android:singleLine="true"
                     android:text="123"
                     android:textSize="25dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="170dp"
                 android:layout_height="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="96dp"
-                android:background="@drawable/background_data"
-                android:backgroundTint="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.066"
-                app:layout_constraintStart_toStartOf="parent">
+                android:background="@drawable/show_data_at_home">
 
                 <ImageView
                     android:id="@+id/img_DoAmDat"
@@ -194,10 +181,12 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="28dp"
                     android:layout_marginTop="42dp"
-                    android:text="Độ ẩm Đất"
-                    android:textSize="17dp" />
+                    android:text="Độ ẩm đất cây 2"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
+                    android:textColor="@color/black"
                     android:id="@+id/tv_DoAmDat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -216,108 +205,65 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="170dp"
-                android:layout_height="200dp"
-                android:layout_marginBottom="324dp"
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="370dp"
+                android:layout_marginBottom="498dp"
                 android:background="@drawable/background_data"
-                android:backgroundTint="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.066"
-                app:layout_constraintStart_toStartOf="parent">
+                android:backgroundTint="@color/dark_back1">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="170dp"
+                    android:layout_height="90dp"
+                    android:text="Tình trạng thời tiết"
+                    android:textAlignment="center"
+                    android:textColor="#508833"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.123"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
 
                 <ImageView
-                    android:id="@+id/img_AnhSang"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="14dp"
-                    android:src="@drawable/sunsight" />
-
+                    android:id="@+id/img_change_weather"
+                    android:layout_width="90dp"
+                    android:layout_height="93dp"
+                    android:layout_toRightOf="@id/textView2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <TextView
-                    android:id="@+id/textAS"
+                    android:id="@+id/tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/img_AnhSang"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="42dp"
-                    android:text="Ánh sáng"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/tv_AnhSang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/img_AnhSang"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="47dp"
-                    android:layout_marginTop="8dp"
-                    android:ellipsize="marquee"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:singleLine="true"
-                    android:text="123"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="170dp"
-                android:layout_height="200dp"
-                android:layout_marginBottom="96dp"
-                android:background="@drawable/background_data"
-                android:backgroundTint="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.933"
-                app:layout_constraintStart_toStartOf="parent">
-
+                    android:layout_below="@id/textView2"
+                    android:text="Máy bơm: "
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+                    />
                 <ImageView
-                    android:id="@+id/img_NhietDo1"
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="14dp"
-                    android:src="@drawable/temp" />
-
-                <TextView
-                    android:id="@+id/textND"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/img_NhietDo1"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginTop="42dp"
-                    android:text="Nhiệt độ"
-                    android:textSize="17dp" />
-
-                <TextView
-                    android:id="@+id/tv_NhietDo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/img_NhietDo1"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="47dp"
-                    android:layout_marginTop="8dp"
-                    android:ellipsize="marquee"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:singleLine="true"
-                    android:text="123"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
+                    android:id="@+id/img_notify_pump"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/textView2"
+                    android:layout_toRightOf="@id/tv3"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/notify_pump"
+                    android:layout_marginTop="10dp"
+                    />
             </RelativeLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </RelativeLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </FrameLayout>

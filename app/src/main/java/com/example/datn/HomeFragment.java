@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -50,10 +51,12 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView temp,huniland,huniair,light,tvDay,tvTime;
-    private Object AnhSang, DoAmKK, DoAmDat,NhietDo;
+    private  ImageView weather;
+    private TextView huniland1,huniland,tvDay,tvTime;
+    private Object DoAmDat,DoAmDat1,status_tb2;
     TextView username;
-    ImageView exit, avatar;
+    ImageView exit, avatar,notify_pump;
+    String check;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -92,45 +95,53 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        temp = view.findViewById(R.id.tv_NhietDo);
+        weather = view.findViewById(R.id.img_change_weather);
         avatar = view.findViewById(R.id.imgAvata);
         tvTime = view.findViewById(R.id.tv_Time);
         tvDay = view.findViewById(R.id.tv_Date);
-        huniair = view.findViewById(R.id.tv_DoAmKK);
         huniland = view.findViewById(R.id.tv_DoAmDat);
-        light = view.findViewById(R.id.tv_AnhSang);
+        huniland1 = view.findViewById(R.id.tv_DoAmDat1);
         exit = view.findViewById(R.id.imgexit);
         username = view.findViewById(R.id.username_home);
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String name = bundle.getString("name");
-            username.setText(name);
-        }
+        notify_pump = view.findViewById(R.id.img_notify_pump);
         loadDateTime();
 
-        temp.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        temp.setSelected(true);
-        huniair.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        huniair.setSelected(true);
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        String currentUserId = mAuth.getCurrentUser().getUid();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(currentUserId);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String name = dataSnapshot.child("name").getValue(String.class);
+                    username.setText(name);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý lỗi nếu có
+            }
+        });
+
         huniland.setEllipsize(TextUtils.TruncateAt.MARQUEE);
         huniland.setSelected(true);
-        light.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        light.setSelected(true);
+        huniland1.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        huniland1.setSelected(true);
+
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference("CamBien");
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        DatabaseReference databaseReference1 = firebaseDatabase.getReference("CheDoHoatDong");
+        databaseReference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                AnhSang = snapshot.child("AnhSang").getValue();
-                DoAmDat = snapshot.child("DoAmDat").getValue();
-                DoAmKK = snapshot.child("DoAm").getValue();
-                NhietDo = snapshot.child("NhietDo").getValue();
-                /*light.setText(AnhSang.toString() + "");
-                temp.setText(NhietDo.toString() + "°C");
-                huniair.setText(DoAmKK.toString() + "%");*/
-                huniland.setText(DoAmDat.toString() + "%");
+                status_tb2 = snapshot.child("MayBom").getValue().toString();
+                if(status_tb2=="true"){
+                    notify_pump.setBackgroundResource(R.drawable.notify_pump);
+                }else if(status_tb2=="false"){
+                    notify_pump.setBackgroundResource(R.drawable.notify_pump_off);
+                }
             }
 
             @Override
@@ -138,6 +149,28 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DoAmDat = snapshot.child("DoAmDat").getValue();
+                DoAmDat1 = snapshot.child("DoAmDat_1").getValue();
+                check = snapshot.child("ThoiTiet").getValue().toString();
+
+                huniland.setText(DoAmDat.toString() + "%");
+                huniland1.setText(DoAmDat1.toString() + "%");
+                if (check == "true"){
+                    weather.setBackgroundResource(R.drawable.icon_rain);
+                }else if(check =="false"){
+                    weather.setBackgroundResource(R.drawable.sunsight1_png);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

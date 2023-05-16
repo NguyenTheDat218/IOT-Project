@@ -7,20 +7,104 @@
     tools:context=".ModeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tablayout_auto_manual"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabSelectedTextColor="@color/purple_200" />
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpaper_auto_manual"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@drawable/plant_background3">
 
+        <RelativeLayout
+            android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/border_layout">
+
+            <ImageView
+                android:id="@+id/img_light"
+                android:layout_width="195dp"
+                android:layout_height="192dp"
+                android:background="@drawable/lightoff"
+                android:layout_centerHorizontal="true"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swOnOff1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_light"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:thumb="@drawable/custom_thumb"
+                app:showText="true"
+                app:track="@drawable/custom_track" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/border_layout">
+
+            <ImageView
+                android:id="@+id/img_pump"
+                android:layout_width="174dp"
+                android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/water_pump_off" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swOnOff2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_pump"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:thumb="@drawable/custom_thumb"
+                app:showText="true"
+                app:track="@drawable/custom_track" />
+
+            <TextView
+                android:id="@+id/tv_setNguongCamBien3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_pump"
+                android:layout_marginTop="55dp"
+                android:text="Ngưỡng độ ẩm: "
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/edit_NguongCamBien3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_below="@id/img_pump"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/tv_setNguongCamBien3"
+                android:enabled="false" />
+
+            <Button
+                android:id="@+id/btn_set_sensor_threshold2"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_setNguongCamBien3"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/roundedbutton"
+                android:text="SET"
+                android:layout_centerHorizontal="true"
+                android:textSize="26sp" />
+        </RelativeLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/CheDo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_1"
+            android:layout_marginLeft="30dp"
+            android:textOff="M"
+            android:textOn="A"
+            android:thumb="@drawable/custom_thumb"
+            app:showText="true"
+            app:track="@drawable/custom_track" />
+
+
+    </RelativeLayout>
 </FrameLayout>

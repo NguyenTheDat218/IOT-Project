@@ -6,9 +6,8 @@
     tools:context=".WebCamFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <SurfaceView
+        android:id="@+id/surfaceView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="4" />
-
+        android:layout_height="match_parent" />
 </FrameLayout>
