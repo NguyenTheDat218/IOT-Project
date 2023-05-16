@@ -96,10 +96,10 @@ public class SetTimeFragment extends Fragment {
         settime2 =view.findViewById(R.id.edit_time2);
         settime3=view.findViewById(R.id.edit_time3);
         settime4=view.findViewById(R.id.edit_timerepeat);
-        numberPicker = view.findViewById(R.id.numberPicker);
+        //numberPicker = view.findViewById(R.id.numberPicker);
         AlertDialog.Builder builder;
         AlertDialog dialog;
-        numberPicker.setWrapSelectorWheel(false);
+        //numberPicker.setWrapSelectorWheel(false);
         //status_Weather = view.findViewById(R.id.img_change_weather);
         Switch_settime1 = view.findViewById(R.id.check_time1);
         Switch_settime2 = view.findViewById(R.id.check_time2);
