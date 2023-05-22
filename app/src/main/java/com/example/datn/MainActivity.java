@@ -32,35 +32,39 @@ public class MainActivity extends AppCompatActivity {
         user_name = intent.getStringExtra("name");
         Bundle bundle = new Bundle();
         bundle.putString("name", user_name);
-        HomeFragment homeFragment = new HomeFragment();
-        homeFragment.setArguments(bundle);
-        replaceFragment(homeFragment);
+        InforFragment inforFragment = new InforFragment();
+        inforFragment.setArguments(bundle);
+        replaceFragment(inforFragment);
 
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-                switch (item.getItemId()){
-                    case R.id.home:
+            switch (item.getItemId()) {
+                case R.id.information:
 
-                        replaceFragment(new HomeFragment());
-                        break;
-                    case R.id.setTime:
-                        replaceFragment(new SetTimeFragment());
-                        break;
-                    case R.id.Mode:
-                        replaceFragment(new ModeFragment());
-                        break;
-                    case R.id.Webcam:
-                        replaceFragment(new WebCamFragment());
-                        break;
-                }
+                    replaceFragment(new InforFragment());
+                    break;
+                case R.id.home:
+
+                    replaceFragment(new HomeFragment());
+                    break;
+                case R.id.setTime:
+                    replaceFragment(new SetTimeFragment());
+                    break;
+                case R.id.Mode:
+                    replaceFragment(new ModeFragment());
+                    break;
+                case R.id.Webcam:
+                    replaceFragment(new WebCamFragment());
+                    break;
+            }
             return true;
         });
     }
 
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
 }
