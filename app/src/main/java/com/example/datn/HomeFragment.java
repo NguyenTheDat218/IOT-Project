@@ -95,16 +95,16 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        weather = view.findViewById(R.id.img_change_weather);
-        avatar = view.findViewById(R.id.imgAvata);
-        tvTime = view.findViewById(R.id.tv_Time);
-        tvDay = view.findViewById(R.id.tv_Date);
-        huniland = view.findViewById(R.id.tv_DoAmDat);
-        huniland1 = view.findViewById(R.id.tv_DoAmDat1);
+//        weather = view.findViewById(R.id.img_change_weather);
+//        avatar = view.findViewById(R.id.imgAvata);
+//        tvTime = view.findViewById(R.id.tv_Time);
+//        tvDay = view.findViewById(R.id.tv_Date);
+//        huniland = view.findViewById(R.id.tv_DoAmDat);
+//        huniland1 = view.findViewById(R.id.tv_DoAmDat1);
         exit = view.findViewById(R.id.imgexit);
         username = view.findViewById(R.id.username_home);
-        notify_pump = view.findViewById(R.id.img_notify_pump);
-        loadDateTime();
+//        notify_pump = view.findViewById(R.id.img_notify_pump);
+        //loadDateTime();
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         String currentUserId = mAuth.getCurrentUser().getUid();
@@ -124,10 +124,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        huniland.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        huniland.setSelected(true);
-        huniland1.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        huniland1.setSelected(true);
+       // huniland.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        //huniland.setSelected(true);
+        //huniland1.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        //huniland1.setSelected(true);
 
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -181,14 +181,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        avatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), setting_page.class);
-                startActivity(intent);
-                getActivity().finish();
-            }
-        });
+//        avatar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), setting_page.class);
+//                startActivity(intent);
+//                getActivity().finish();
+//            }
+//        });
 
         return view;
 }

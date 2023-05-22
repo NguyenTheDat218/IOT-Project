@@ -15,5 +15,6 @@
     <color name="dark_back">#DBD6D6</color>
     <color name="text_lock">#7C7C7C</color>
     <color name="dark_back1">#BAC790</color>
+    <color name="dark_back2">#EDF1ED</color>
 
 </resources>

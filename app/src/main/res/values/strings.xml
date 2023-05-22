@@ -3,4 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="plant_iot">PLANT IOT</string>
+    <string name="mem1">Member 1: Nguyễn Thế Đạt</string>
+    <string name="mem2">Member 2: Hồ Nhật Huy</string>
+    <string name="mem3">Member 3: Bùi Quang Huy</string>
+    <string name="welcome">Welcome to IoT System Group 8</string>
 </resources>
