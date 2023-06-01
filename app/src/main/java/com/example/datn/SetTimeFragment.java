@@ -125,9 +125,9 @@ public class SetTimeFragment extends Fragment {
                 String a = snapshot.child("KhoangTG").child("KhoangTG_Phut").getValue().toString();
                 String c = snapshot.child("KhoangTG_LapLai").getValue().toString();
                 settime1.setText(snapshot.child("Gio").getValue().toString() + ":" + snapshot.child("Phut").getValue().toString());
-                settime2.setText( a+" phút");
+                settime2.setText( a);
                 settime3.setText(snapshot.child("LapLai").getValue().toString());
-                settime4.setText(c  + " phút");
+                settime4.setText(c );
             }
 
             @Override
