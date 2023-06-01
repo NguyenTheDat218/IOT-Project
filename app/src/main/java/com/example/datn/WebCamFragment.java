@@ -1,73 +1,103 @@
 package com.example.datn;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
+import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.TextView;
+import android.widget.VideoView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WebCamFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.exoplayer2.DefaultRenderersFactory;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.util.Util;
+
+import java.io.File;
+
 public class WebCamFragment extends Fragment {
+    private static final int REQUEST_PICK_VIDEO = 1;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private TextView videoNameTextView;
+    private Button pickVideoButton;
+    private VideoView videoView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    private CameraController mCameraController;
-
-
-    public WebCamFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WebCamFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WebCamFragment newInstance(String param1, String param2) {
-        WebCamFragment fragment = new WebCamFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private Uri videoUri;
+    private String videoName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_web_cam, container, false);
-        SurfaceView surfaceView = view.findViewById(R.id.surfaceView);
 
-        // Khởi tạo đối tượng CameraController
-        mCameraController = new CameraController(getActivity(),surfaceView);
-        mCameraController.openCamera();
+        videoNameTextView = view.findViewById(R.id.videoNameTextView);
+        pickVideoButton = view.findViewById(R.id.pickVideoButton);
+        videoView = view.findViewById(R.id.videoView);
+
+        pickVideoButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("video/*");
+            startActivityForResult(intent, REQUEST_PICK_VIDEO);
+        });
+
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_PICK_VIDEO && resultCode == getActivity().RESULT_OK) {
+            if (data != null && data.getData() != null) {
+                videoUri = data.getData();
+                videoName = getVideoFileName(videoUri);
+                videoNameTextView.setText(videoName);
+                playVideoFromUri(videoUri);
+            }
+        }
+    }
+
+    private String getVideoFileName(Uri uri) {
+        String displayName = null;
+        try (Cursor cursor = getActivity().getContentResolver().query(uri, null, null, null, null)) {
+            if (cursor != null && cursor.moveToFirst()) {
+                int displayNameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                if (displayNameIndex != -1) {
+                    displayName = cursor.getString(displayNameIndex);
+                }
+            }
+        }
+        return displayName;
+    }
+
+
+    private void playVideoFromUri(Uri videoUri) {
+        videoView.setVideoURI(videoUri);
+        videoView.start();
     }
 }

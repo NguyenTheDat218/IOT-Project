@@ -12,13 +12,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -31,8 +36,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,7 +61,6 @@ public class SetTimeFragment extends Fragment {
     Switch Switch_settime1, Switch_settime2;
     private int key_xac_nhan;
     private boolean key_xac_nhan_lap_lai;
-    private NumberPicker numberPicker ;
     public SetTimeFragment() {
         // Required empty public constructor
     }
@@ -96,10 +102,8 @@ public class SetTimeFragment extends Fragment {
         settime2 =view.findViewById(R.id.edit_time2);
         settime3=view.findViewById(R.id.edit_time3);
         settime4=view.findViewById(R.id.edit_timerepeat);
-        numberPicker = view.findViewById(R.id.numberPicker);
         AlertDialog.Builder builder;
         AlertDialog dialog;
-        numberPicker.setWrapSelectorWheel(false);
         //status_Weather = view.findViewById(R.id.img_change_weather);
         Switch_settime1 = view.findViewById(R.id.check_time1);
         Switch_settime2 = view.findViewById(R.id.check_time2);
@@ -121,9 +125,9 @@ public class SetTimeFragment extends Fragment {
                 String a = snapshot.child("KhoangTG").child("KhoangTG_Phut").getValue().toString();
                 String c = snapshot.child("KhoangTG_LapLai").getValue().toString();
                 settime1.setText(snapshot.child("Gio").getValue().toString() + ":" + snapshot.child("Phut").getValue().toString());
-                settime2.setText( a+"phút");
+                settime2.setText( a+" phút");
                 settime3.setText(snapshot.child("LapLai").getValue().toString());
-                settime4.setText(c);
+                settime4.setText(c  + " phút");
             }
 
             @Override
@@ -149,29 +153,57 @@ public class SetTimeFragment extends Fragment {
                 timePickerDialog.show();
             }
         });
-        settime2.setOnClickListener(new View.OnClickListener() {
+        settime2.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(getContext());
-                dialog.setContentView(R.layout.number_picker_dialog);
-                final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker);
-                numberPicker.setMinValue(1);
-                numberPicker.setMaxValue(60);
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    final Dialog dialog = new Dialog(getContext());
+                    dialog.setContentView(R.layout.number_picker_dialog);
+                    final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker);
+                    numberPicker.setMinValue(1);
+                    numberPicker.setMaxValue(60);
 
-                Button okButton = dialog.findViewById(R.id.okButton);
-                okButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int selectedValue = numberPicker.getValue();
-                        settime2.setText(String.valueOf(selectedValue));
-                        dialog.dismiss();
-                    }
-                });
+                    Button okButton = dialog.findViewById(R.id.okButton);
+                    okButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int selectedValue = numberPicker.getValue();
+                            settime2.setText(String.valueOf(selectedValue));
+                            dialog.dismiss();
+                        }
+                    });
 
-                dialog.show();
+                    dialog.show();
+                }
+                return true;
             }
         });
 
+        settime4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    final Dialog dialog = new Dialog(getContext());
+                    dialog.setContentView(R.layout.number_picker_dialog);
+                    final NumberPicker numberPicker = dialog.findViewById(R.id.numberPicker);
+                    numberPicker.setMinValue(1);
+                    numberPicker.setMaxValue(60);
+
+                    Button okButton = dialog.findViewById(R.id.okButton);
+                    okButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int selectedValue = numberPicker.getValue();
+                            settime4.setText(String.valueOf(selectedValue));
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                }
+                return true;
+            }
+        });
 
 
         settime1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -210,12 +242,10 @@ public class SetTimeFragment extends Fragment {
                     String minute = parts[1];
                     String[] parts1 = settime2.getText().toString().split(":");
                     String minutes = parts1[0];
-                    String seconds = parts1[1];
                     String parts2 = settime4.getText().toString();
                     child.child("Gio").setValue(Float.parseFloat(hour));
                     child.child("Phut").setValue(Float.parseFloat(minute));
                     child.child("KhoangTG").child("KhoangTG_Phut").setValue(Float.parseFloat(minutes));
-                    child.child("KhoangTG").child("KhoangTG_Giay").setValue(Float.parseFloat(seconds));
                     child.child("KhoangTG_LapLai").setValue(Float.parseFloat(parts2));
                     child.child("XacNhan").setValue(3);
                 }else if(Switch_settime1.isChecked()==false){
@@ -261,20 +291,4 @@ public class SetTimeFragment extends Fragment {
         });*/
         return view;
     }
-    public void showNumberPicker(View view) {
-        ViewSwitcher switcher = view.findViewById(R.id.switcher);
-        switcher.showNext();
-        EditText settime2 = view.findViewById(R.id.edit_time2);
-        NumberPicker numberPicker = view.findViewById(R.id.number_picker);
-        numberPicker.setValue(Integer.parseInt(settime2.getText().toString()));
-    }
-    public void updateEditText(View view) {
-        ViewSwitcher switcher = view.findViewById(R.id.switcher);
-        switcher.showPrevious();
-
-        EditText settime2 = view.findViewById(R.id.edit_time2);
-        NumberPicker numberPicker = view.findViewById(R.id.number_picker);
-        settime2.setText(String.valueOf(numberPicker.getValue()));
-    }
-
 }

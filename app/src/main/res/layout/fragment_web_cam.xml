@@ -2,12 +2,29 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".WebCamFragment">
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/pickVideoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Video"
+        android:layout_centerInParent="true"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <SurfaceView
-        android:id="@+id/surfaceView"
+    <TextView
+        android:id="@+id/videoNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickVideoButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"/>
+
+    <VideoView
+        android:id="@+id/videoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/videoNameTextView"/>
+
+
+
 </FrameLayout>
