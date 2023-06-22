@@ -111,15 +111,16 @@
                         android:textColor="@color/black"
                         android:textSize="25dp" />
 
+
                     <EditText
                         android:id="@+id/edit_time2"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
+                        android:minWidth="80dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="230dp"
                         android:layout_marginTop="16dp"
                         android:textColor="@color/text_lock"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
                     <TextView
                         android:id="@+id/tv_settimerepeat"
@@ -143,30 +144,16 @@
                         android:layout_toRightOf="@id/tv_settimerepeat"
                         android:textColor="@color/text_lock"
                         app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <TextView
-                        android:id="@+id/tvphut"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="28dp"
-                        android:layout_marginEnd="39dp"
-                        android:layout_marginRight="25dp"
-                        android:text="Phút"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvphut"
+                        android:layout_below="@id/tv_settime2"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="41dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="30dp"
                         android:textStyle="bold"
                         android:layout_marginRight="25dp"
-                        android:text="Phút"
+                        android:text="Tiếng"
                         android:textSize="20dp" />
                 </RelativeLayout>
 
@@ -204,7 +191,6 @@
                         android:textColor="@color/text_lock"
                         app:layout_constraintStart_toEndOf="@+id/tv_settime3"
                         app:layout_constraintTop_toTopOf="parent" />
-
                     <Switch
                         android:id="@+id/check_time2"
                         android:layout_width="73dp"

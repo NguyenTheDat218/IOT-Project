@@ -1,9 +1,11 @@
 package com.example.datn;
 
+import static android.content.Context.MODE_PRIVATE;
 import static java.lang.String.format;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.DrawableRes;
@@ -175,6 +177,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putStringSet("password", null);
+                editor.putStringSet("email", null);
+                editor.apply();
                 Intent intent = new Intent(getActivity(), login_page.class);
                 startActivity(intent);
                 getActivity().finish();

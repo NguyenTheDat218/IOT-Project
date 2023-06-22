@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/home"
 
-        android:title="Home"
+        android:title="Trang chủ"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item android:id="@+id/setTime"
         android:title="Hẹn giờ"
@@ -10,7 +10,4 @@
     <item android:id="@+id/Mode"
         android:title="Chế độ"
         android:icon="@drawable/ic_baseline_autorenew_24"/>
-    <item android:id="@+id/Webcam"
-        android:title="WebCam"
-        android:icon="@drawable/ic_baseline_camera_24"/>
 </menu>

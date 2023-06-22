@@ -240,16 +240,16 @@
                     app:layout_constraintHorizontal_bias="0.333"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textView2"
-                    android:text="Máy bơm: "
-                    android:textSize="26dp"
-                    android:textStyle="bold"
                     android:layout_marginLeft="20dp"
-                    />
+                    android:text="Van nước: "
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
                 <ImageView
                     android:id="@+id/img_notify_pump"
                     android:layout_width="20dp"

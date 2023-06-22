@@ -14,8 +14,8 @@
         <item name="cornerSize">50%</item>
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/plant_background4</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@drawable/background_data</item>
     </style>
+
 
 </resources>

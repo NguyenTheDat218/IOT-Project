@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,12 +36,9 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment = new HomeFragment();
         homeFragment.setArguments(bundle);
         replaceFragment(homeFragment);
-
-
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
                 switch (item.getItemId()){
                     case R.id.home:
-
                         replaceFragment(new HomeFragment());
                         break;
                     case R.id.setTime:
@@ -48,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.Mode:
                         replaceFragment(new ModeFragment());
-                        break;
-                    case R.id.Webcam:
-                        replaceFragment(new WebCamFragment());
                         break;
                 }
             return true;

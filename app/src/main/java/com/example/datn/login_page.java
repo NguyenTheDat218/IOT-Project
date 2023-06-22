@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,18 +26,20 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login_page extends AppCompatActivity {
 
-    private EditText pass,email;
-    private Button btn_login,btn_to_register;
+    private EditText pass, email;
+    private Button btn_login, btn_to_register;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login_page);
-        mAuth = FirebaseAuth.getInstance();
-        pass=findViewById(R.id.password_login);
-        email=findViewById(R.id.username_login);
+        pass = findViewById(R.id.password_login);
+        email = findViewById(R.id.username_login);
         btn_login = findViewById(R.id.btn_login);
         btn_to_register = findViewById(R.id.btn_to_register);
+        mAuth = FirebaseAuth.getInstance();
 
         btn_to_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,14 +53,14 @@ public class login_page extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email1,password;
+                String email1, password;
                 email1 = email.getText().toString();
                 password = pass.getText().toString();
-                if(TextUtils.isEmpty(email1)){
+                if (TextUtils.isEmpty(email1)) {
                     Toast.makeText(login_page.this, "Enter email", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     Toast.makeText(login_page.this, "Enter email", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -78,17 +81,23 @@ public class login_page extends AppCompatActivity {
                                                 String name = snapshot.getValue(String.class);
                                                 Toast.makeText(login_page.this, "Login success.", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                                intent.putExtra("name",name);
+                                                intent.putExtra("name", name);
+                                                // Lưu thông tin đăng nhập
+                                                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("email", email1);
+                                                editor.putString("password", password);
+                                                editor.apply();
                                                 startActivity(intent);
                                                 finish();
                                             }
                                         }
+
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError error) {
                                             Toast.makeText(login_page.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                                         }
                                     });
-
 
 
                                 } else {
